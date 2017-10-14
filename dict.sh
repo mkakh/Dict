@@ -19,7 +19,7 @@ if [ $1 = "add" ] || [ $1 = "a" ]; then
     fi
     printf "%s,%s\n" "$2" "$DEFINITION" >> $DICT_FILE
 elif [ $1 = "search" ] || [ $1 = "s" ]; then
-    grep -w "$2" $DICT_FILE
+    grep -E "^$2,.*$" $DICT_FILE
 elif [ $1 = "delete" ] || [ $1 = "d" ]; then
     sed "/^$2,.*$/d" -i $DICT_FILE
 else

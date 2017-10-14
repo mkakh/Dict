@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 set -eu
-DICT_FILE="~/.config/dict/dict.csv"
-mkdir -p "~/.config/dict"
+DICT_FILE="$HOME/.config/dict/dict.csv"
+mkdir -p "$HOME/.config/dict"
 
 if [ $# -lt 2 ]; then
     echo "Usage: $0 [search|add|delete] word"

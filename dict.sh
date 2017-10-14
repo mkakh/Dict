@@ -17,7 +17,7 @@ check_argc 1
 
 if [ $1 = "all" ] || [ $1 = "show" ]; then
     check_argc 1
-    cat $DICT_FILE
+    sort -d $DICT_FILE
 elif [ $1 = "reset" ]; then
     check_argc 1
     echo "Are you sure to delete the dictionary file? [y/N]"

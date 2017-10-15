@@ -8,7 +8,7 @@ ARGC=$#
 
 function check_argc() {
     if [ $ARGC -lt $1 ]; then
-        echo "Usage: $0 [search|add|delete] word"
+        echo "Usage: $0 [all|reset|search|add|delete] word"
         exit 1
     fi
 }

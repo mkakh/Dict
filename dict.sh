@@ -21,7 +21,7 @@ if [ $1 = "markdown" ] || [ $1 = "md" ]; then
     printf "|:--------|:--------|\n"
     IFS=$'\n' 
     for STR in $OUTPUT; do
-        printf "| %s | %s |\n" $(echo $STR|cut -d, -f1) $(echo $STR|cut -d, -f2)
+        printf "| %s | %s |\n" $(echo $STR|cut -d, -f1) $(echo $STR|cut -d, -f2-)
     done
 elif [ $1 = "all" ] || [ $1 = "show" ]; then
     check_argc 1

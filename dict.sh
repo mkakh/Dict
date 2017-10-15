@@ -18,6 +18,7 @@ check_argc 1
 if [ $1 = "markdown" ] || [ $1 = "md" ]; then
     check_argc 1
     OUTPUT=$(sort -d $DICT_FILE)
+    printf "|WORD|DEFINITION|\n"
     printf "|:--------|:--------|\n"
     IFS=$'\n' 
     for STR in $OUTPUT; do

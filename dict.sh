@@ -8,14 +8,14 @@ ARGC=$#
 
 function check_argc() {
     if [ $ARGC -lt $1 ]; then
-        echo "Usage: $0 [all|reset|search|add|delete] word"
+        echo "Usage: $0 [markdown|all|reset|search|add|delete] word"
         exit 1
     fi
 }
     
 check_argc 1
 
-if [ $1 = "md" ]; then
+if [ $1 = "markdown" ] || [ $1 = "md" ]; then
     check_argc 1
     OUTPUT=$(sort -d $DICT_FILE)
     printf "|:--------|:--------|\n"

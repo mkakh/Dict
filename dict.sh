@@ -15,7 +15,15 @@ function check_argc() {
     
 check_argc 1
 
-if [ $1 = "all" ] || [ $1 = "show" ]; then
+if [ $1 = "md" ]; then
+    check_argc 1
+    OUTPUT=$(sort -d $DICT_FILE)
+    printf "|:--------|:--------|\n"
+    IFS=$'\n' 
+    for STR in $OUTPUT; do
+        printf "| %s | %s |\n" $(echo $STR|cut -d, -f1) $(echo $STR|cut -d, -f2)
+    done
+elif [ $1 = "all" ] || [ $1 = "show" ]; then
     check_argc 1
     sort -d $DICT_FILE
 elif [ $1 = "reset" ]; then

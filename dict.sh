@@ -46,7 +46,7 @@ elif [ $1 = "add" ] || [ $1 = "a" ]; then
     printf "%s,%s\n" "$2" "$DEFINITION" >> $DICT_FILE
 elif [ $1 = "search" ] || [ $1 = "s" ]; then
     check_argc 2
-    grep -E "^$2,.*$" $DICT_FILE
+    grep -E "^$2,.*$" $DICT_FILE | cut -d, -f2-
 elif [ $1 = "delete" ] || [ $1 = "d" ]; then
     check_argc 2
     sed "/^$2,.*$/d" -i $DICT_FILE
